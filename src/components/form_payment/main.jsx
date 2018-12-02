@@ -78,22 +78,22 @@ export default class Payment extends Component {
     switch(fieldName) {
       case 'number':
         regex = /^4[0-9]{3}-[0-9]{4}-[0-9]{4}$/;
-        errorMsg = 'Number must start with "4" and match the pattern "xxxx-xxxx-xxxx"';
+        errorMsg = 'Must start with "4" and match pattern "xxxx-xxxx-xxxx"';
 
         if (card === 'amex') {
           regex = /^34|37[0-9]{2}-[0-9]{6}-[0-9]{5}$/;          
-          errorMsg = 'Number must start with "34 of "37" and match the pattern "xxxx-xxxxxx-xxxxx"';
+          errorMsg = 'Must start with "34 or "37" and match pattern "xxxx-xxxxxx-xxxxx"';
         }
 
         fieldValid = regex.test(value);
         errors.number = fieldValid ? '' : errorMsg;
         break;
       case 'cvv':
-        regex = /[a-z,A-Z,0-9]{3}$/;
+        regex = /^[a-z,A-Z,0-9]{3}$/;
         errorMsg = 'CVV must contain 3 characters.';
 
         if (card === 'amex') {
-          regex = /[a-z,A-Z,0-9]{4}$/;          
+          regex = /^[a-z,A-Z,0-9]{4}$/;          
           errorMsg = 'CVV must contain 4 characters.';
         }
 
@@ -120,40 +120,51 @@ export default class Payment extends Component {
     let submittedText;
 
     if (submitted) {
-      console.log('yuuup');
-      submittedText = <p className="complete">{'Credit Card Information submitted'}</p>;
+      submittedText = <p className="complete">{'Credit Card Information submitted!!!'}</p>;
     }
 
     return (
       <div className="form-wrapper">
         <div className="form">
-          <h1>Enter Your Credit Card Information</h1>
+          <h1 className="form-header">Enter Your Credit Card Information</h1>
           <form onSubmit={this.handleSubmit}>
             <div className="card-type">
               <div className="card-type-label">Select a Card Type:</div>
               <div className="radio">
                 <label>
                   <input onChange={this.handleUserInput} type="radio" name="card" value="visa" checked={card === 'visa'} />
-                  VISA
+                  <div className="card-name">VISA</div>
                 </label>
               </div>
               <div className="radio">
                 <label>
                   <input onChange={this.handleUserInput} type="radio" name="card" value="amex" checked={card === 'amex'} />
-                  AMERICAN EXPRESS
+                  <div className="card-name">AMERICAN EXPRESS</div>
                 </label>
               </div>
             </div>
-            <input onChange={this.handleUserInput} type="text" id="name" name="name" placeholder="Name" value={name} required />
-            <input onChange={this.handleUserInput} type="text" id="number" name="number" placeholder="Card Number" value={number} required />
-            <p className="error">{errors.number}</p>
-            <input onChange={this.handleUserInput} type="text" id="cvv" name="cvv" placeholder="CVV2" value={cvv} required />
-            <p className="error">{errors.cvv}</p>
-            <div>Expiration Date: </div>
-            <input onChange={this.handleUserInput} type="month" id="expDate" name="expDate" value={expDate} required />
-            <p className="error">{errors.expDate}</p>
-            <button type="submit">Submit</button>
-            {submittedText}
+            <div className="field-wrapper">
+              <div className="input-wrapper">
+                <input onChange={this.handleUserInput} type="text" id="name" name="name" placeholder="Name" value={name} required />
+              </div>
+              <div className="input-wrapper">
+                <input onChange={this.handleUserInput} type="text" id="number" name="number" placeholder="Card Number" value={number} required />
+                <p className="error">{errors.number}</p>
+              </div>
+              <div className="input-wrapper">
+                <input onChange={this.handleUserInput} type="text" id="cvv" name="cvv" placeholder="CVV2" value={cvv} required />
+                <p className="error">{errors.cvv}</p>
+              </div>
+              <div className="input-wrapper">
+                <label className='date-label'>Expiration Date:</label>
+                <input onChange={this.handleUserInput} type="month" id="expDate" name="expDate" value={expDate} required />
+                <p className="error expDate-error">{errors.expDate}</p>
+              </div>
+              <div className="submit-wrapper">
+                <button className="submit-button" type="submit">Submit</button>
+                {submittedText}
+              </div>
+            </div>
           </form>
         </div>
       </div>
