@@ -1,0 +1,58 @@
+{
+  "name": "affirm-take-home-challenge",
+  "version": "1.0.0",
+  "description": "Personal Blog.",
+  "private": true,
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "test": "echo Replace this with unit tests when up and running..."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickdaniele/Affirm-Take-Home-Challenge.git"
+  },
+  "author": "Nick Daniele",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickdaniele/Affirm-Take-Home-Challenge/issues"
+  },
+  "homepage": "https://github.com/nickdaniele/Affirm-Take-Home-Challenge#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.0",
+    "csv-loader": "^3.0.2",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "file-loader": "^2.0.0",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
+    "xml-loader": "^1.2.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.21.0",
+    "webpack-merge": "^4.1.4"
+  }
+}
