@@ -1,0 +1,107 @@
+.form-wrapper {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.form {
+    margin: auto;
+    padding: 10px 10px;
+    width: 600px;
+    background-color: lightgray;
+    border-radius: 10px;
+    border: 1px solid darkgray;
+}
+
+.form-header {
+    margin-bottom: 52px;
+}
+
+.card-type {
+    margin-bottom: 45px;
+    font-size: 18px;
+}
+
+.card-type-label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.radio {
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+.card-name {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    margin-left: 3px;
+}
+
+.field-wrapper {
+    width: 65%;
+    margin: auto;
+}
+
+.input-wrapper {
+    margin-bottom: 25px;
+    height: 63px;
+}
+
+#name , #number, #cvv, #expDate {
+    display: inline-block;
+    width: calc(100% - 20px);
+    border: 0px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 10px;
+    color: dimgray
+}
+
+.date-label {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#expDate {
+    width: inherit;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.error {
+    color: red;
+    font-weight: 500;
+    font-size: 13px;
+    margin-bottom: 0px;
+}
+
+.expDate-error {
+    padding-left: 126px;
+}
+
+.submit-wrapper {
+    margin-bottom: 70px;
+}
+
+.submit-button {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: lightskyblue;
+    color: white;
+    border: 1px solid;
+    border-color: cornflowerblue;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.complete {
+    color: forestgreen;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
